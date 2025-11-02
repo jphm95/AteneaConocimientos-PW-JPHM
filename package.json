@@ -2,7 +2,6 @@
   "name": "ateneaconocimientos-pw",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Atenea-Conocimientos/AteneaConocimientos-PW.git"
@@ -16,8 +15,33 @@
   "homepage": "https://github.com/Atenea-Conocimientos/AteneaConocimientos-PW#readme",
   "description": "",
   "devDependencies": {
+    "@eslint/js": "^9.39.0",
     "@playwright/test": "^1.56.0",
     "@types/node": "^24.7.2",
-    "dotenv": "^17.2.3"
+    "@typescript-eslint/eslint-plugin": "^8.46.2",
+    "@typescript-eslint/parser": "^8.46.2",
+    "dotenv": "^17.2.3",
+    "e": "^0.2.33",
+    "eslint": "^9.39.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^16.5.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.6.2",
+    "typescript-eslint": "^8.46.2"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ci": "playwright test --reporter=line",
+    "report:open": "playwright show-report",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "npm run lint -- --fix",
+    "format": "prettier \"**/*.{ts,js,json,md}\" --write",
+    "format:check": "npm run format -- --check",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "playwright": "^1.56.1"
   }
 }
